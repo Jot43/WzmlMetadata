@@ -204,6 +204,9 @@ async def restart_notification():
                 if msg:
                     await send_incompelete_task_message(cid, msg)
 
+    #if RESUME_INCOMPLETE_TASKS and DATABASE_URL:
+        
+    
     if await aiopath.isfile(".restartmsg"):
         try:
             await bot.edit_message_text(chat_id=chat_id, message_id=msg_id, text=BotTheme('RESTART_SUCCESS', time=now.strftime('%I:%M:%S %p'), date=now.strftime('%d/%m/%y'), timz=config_dict['TIMEZONE'], version=get_version()))

@@ -119,7 +119,6 @@ async def sendMultiMessage(chat_ids, text, buttons=None, photo=None):
                     break
                 except Exception as e:
                     LOGGER.error(str(e))
-                continue
             LOGGER.info("DEBUG CP 2")
             sent = await bot.send_message(chat_id=chat.id, text=text, disable_web_page_preview=True,
                                                disable_notification=True, reply_to_message_id=topic_id, reply_markup=buttons)
