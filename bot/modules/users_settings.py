@@ -166,8 +166,8 @@ async def get_user_settings(from_user, key=None, edit_type=None, edit_mode=None)
         lsuffix = 'Not Exists' if (val:=user_dict.get('lsuffix', config_dict.get('LEECH_FILENAME_SUFFIX', ''))) == '' else val
         buttons.ibutton(f"{'✅️' if lsuffix != 'Not Exists' else ''} Leech Suffix", f"userset {user_id} lsuffix")
 
-        buttons.ibutton("Metadata", f"userset {user_id} metadata")
-        metadata = user_dict.get('metadata', 'Not Exists')
+        metadata = 'Not Exists' if (val:=user_dict.get('metadata', '')) == '' else val
+        buttons.ibutton(f"{'✅️' if metadata != 'Not Exists' else ''} Metadata", f"userset {user_id} metadata")
                 
         lremname = 'Not Exists' if (val:=user_dict.get('lremname', config_dict.get('LEECH_FILENAME_REMNAME', ''))) == '' else val
         buttons.ibutton(f"{'✅️' if lremname != 'Not Exists' else ''} Leech Remname", f"userset {user_id} lremname")
